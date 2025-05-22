@@ -1,0 +1,640 @@
+/* styles.css - Koyu Mod */
+
+/* --- Global Reset & Temel Ayarlar --- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  user-select: none;
+}
+
+html, body {
+  height: 100%;
+  font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen,
+    Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  background: #121212;
+  color: #e0e0e0;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 10px 20px;
+}
+
+/* --- App Container --- */
+.app-container {
+  background: #1e1e1e;
+  border-radius: 16px;
+  box-shadow:
+    0 0 30px #000000cc,
+    inset 0 0 20px #2a2a2a;
+  width: 960px;
+  padding: 20px 20px 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  user-select: none;
+}
+
+/* --- Başlık --- */
+.app-title {
+  font-weight: 900;
+  font-size: 3.5rem;
+  color: #f0e6f6; /* Hafif morumsu açık ton */
+  text-align: center;
+  margin-bottom: 30px;
+  letter-spacing: 4px;
+  text-shadow:
+    0 0 8px #a77fff,    /* Mor parlaklık */
+    0 0 15px #7b3fbf;   /* Daha derin gölge */
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  user-select: none; /* Yazının seçilmesini engelle */
+}
+
+
+/* --- Score Panel --- */
+
+
+.score-box {
+  background: #292929;
+  color: #fff;
+  padding: 12px 24px;
+  border-radius: 10px;
+  font-weight: 700;
+  font-size: 1.3rem;
+  box-shadow: 0 4px 6px #4a2c2c;
+  letter-spacing: 0.03em;
+  
+}
+
+/* --- Game Grid --- */
+.grid {
+  background: #292929;
+  border-radius: 7px;
+  padding: 15px;
+  width:400px;
+  height:400px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 15px;
+  box-shadow:
+    inset 0 5px 12px #1f1f1f,
+    0 8px 16px #000000cc;
+}
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(4, 6rem);
+  grid-gap: 1rem;
+  background-color: #121212; /* koyu arka plan */
+  padding: 1rem;
+  border-radius: 1.5rem;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.7);
+  max-width: 380px;
+  margin: 0 auto;
+}
+
+/* --- Tile --- */
+/* Tile genel stil */
+.tile {
+  height: 6rem;
+  width: 6rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  font-weight: 800;
+  border-radius: 1rem;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  user-select: none;
+  color: transparent; /* default, 0 değeri için */
+}
+
+/* Tile değerlerine göre koyu mod renkler */
+.tile-0 {
+  background: #3a3a3a;
+  color: transparent;
+}
+.tile-2 {
+  background: #ffeaa7; /* açık parlak sarı */
+  color: #2d3436;      /* koyu yazı */
+}
+.tile-4 {
+  background: #fab1a0; /* parlak açık kırmızı-turuncu */
+  color: #2d3436;
+}
+.tile-8 {
+  background: #ff7675; /* canlı kırmızı */
+  color: #fff;
+  font-weight: 900;
+}
+.tile-16 {
+  background: #fd79a8; /* parlak pembe */
+  color: #fff;
+  font-weight: 900;
+}
+.tile-32 {
+  background: #e17055; /* sıcak turuncu-kahverengi */
+  color: #fff;
+}
+.tile-64 {
+  background: #d63031; /* koyu parlak kırmızı */
+  color: #fff;
+}
+.tile-128 {
+  background: #fab1a0;
+  color: #2d3436;
+  font-size: 1.6rem;
+}
+.tile-256 {
+  background: #ff9ff3; /* parlak açık pembe */
+  color: #2d3436;
+  font-size: 1.6rem;
+}
+.tile-512 {
+  background: #feca57; /* parlak turuncu-sarı */
+  color: #2d3436;
+  font-size: 1.6rem;
+}
+.tile-1024 {
+  background: #ff6b6b; /* canlı kırmızı-turuncu */
+  color: #fff;
+  font-size: 1.4rem;
+}
+.tile-2048 {
+  background: #ff4757; /* parlak kırmızı */
+  color: #fff;
+  font-size: 1.4rem;
+}
+
+/* --- Buttons --- */
+button {
+  background: #d4622b;
+  border: none;
+  border-radius: 12px;
+  color: #000;
+  padding: 14px 28px;
+  font-weight: 700;
+  font-size: 1.1rem;
+  box-shadow: 0 6px 0 #ffe8b3;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  user-select: none;
+}
+
+button:hover {
+  background: #ffe8b3;
+  box-shadow: 0 6px 0 #ffe8b3;
+}
+
+/* --- Start Screen --- */
+.start-screen {
+  text-align: center;
+}
+
+.start-screen h2 {
+  font-size: 1.8rem;
+  margin-bottom: 20px;
+  color: #666;
+  text-shadow: 0 0 8px #4a2c2c;
+}
+
+.start-screen button {
+  margin-top: 12px;
+  
+}
+
+/* --- Game Over Popup --- */
+.gameover-overlay {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.85); /* Daha koyu, transparan zemin */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 50;
+}
+
+.gameover-popup {
+  background-color: #1f2937; /* koyu gri/mavi ton */
+  padding: 2rem 3rem;
+  border-radius: 1.5rem;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.8);
+  text-align: center;
+  max-width: 320px;
+  width: 90%;
+  color: #f9fafb; /* açık metin rengi */
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.gameover-popup h2 {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  color: #fef3c7; /* yumuşak sarı */
+}
+
+.gameover-popup p {
+  margin-bottom: 1rem;
+  font-size: 1.125rem;
+  color: #d1d5db; /* açık gri */
+}
+
+.gameover-popup button {
+  background-color: #4ade80; /* canlı yeşil */
+  color: #111827; /* koyu metin */
+  font-weight: 600;
+  padding: 0.5rem 1.5rem;
+  border: none;
+  border-radius: 0.75rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  box-shadow: 0 4px 6px rgba(74, 222, 128, 0.5);
+}
+
+.gameover-popup button:hover {
+  background-color: #22c55e; /* daha koyu yeşil */
+  box-shadow: 0 6px 10px rgba(34, 197, 94, 0.6);
+}
+
+
+/* --- Responsive --- */
+@media (max-width: 420px) {
+  .app-container {
+    width: 95vw;
+    padding: 24px;
+  }
+
+  .tile {
+    width: 60px;
+    height: 60px;
+    font-size: 1.6rem;
+  }
+
+  .score-box {
+    font-size: 1.1rem;
+    padding: 10px 18px;
+  }
+}
+
+.leaderboard {
+  background-color: #121212; /* koyu arka plan */
+  color: #f0f0f0;            /* açık renk metin */
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.5);
+  width: 320px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  user-select: none;
+  overflow-x: auto;
+  
+}
+
+.leaderboard h2 {
+  font-size: 1.6rem;
+  margin-bottom: 15px;
+  text-align: center;
+  font-weight: 700;
+}
+
+.leaderboard table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.leaderboard thead tr {
+  border-bottom: 2px solid #444;
+}
+
+.leaderboard th,
+.leaderboard td {
+  padding: 10px 12px;
+  text-align: left;
+  font-size: 1rem;
+}
+
+.leaderboard th {
+  color: #a0a0a0;
+  font-weight: 600;
+}
+
+.leaderboard tbody tr {
+  border-bottom: 1px solid #333;
+  transition: background-color 0.3s ease;
+  cursor: default;
+}
+
+.leaderboard tbody tr:hover {
+  background-color: #2a2a40;
+}
+
+.leaderboard tbody td:first-child {
+  font-weight: 700;
+  width: 30px;
+}
+
+.leaderboard tbody td:nth-child(2) {
+  font-family: monospace;
+  width: 160px;
+}
+
+.leaderboard tbody td:last-child {
+  font-weight: 600;
+  text-align: right;
+  width: 70px;
+}
+
+/* Responsive: küçük ekranlarda tablonun tam genişlikte olması için */
+@media (max-width: 768px) {
+  .leaderboard {
+    width: 100%;
+    margin-top: 20px;
+  }
+}
+.game-area {
+  display: flex;
+  gap: 24px; /* İki bileşen arası boşluk */
+  justify-content: center;
+  align-items: flex-start;
+  margin-top: 20px;
+}
+
+/* GameGrid genişliği esnek, Leaderboard sabit genişlikte */
+.game-area > div:first-child {
+  flex: 1 1 auto;
+  max-width: 600px; /* İstersen burayı oyun gridinin genişliğine göre ayarla */
+}
+
+.leaderboard {
+  flex: 0 0 300px; /* Sabit genişlik */
+  /* Zaten önceki CSS'in varsa burayı koru */
+}
+
+
+.wallet-connected {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  background: #1f2937; /* koyu gri - koyu tema için */
+  padding: 10px 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.25);
+  color: #f9fafb; /* açık renk */
+  font-weight: 500;
+  user-select: none;
+  max-width: 300px;
+  width: 100%;
+  justify-content: space-between;
+}
+
+.wallet-address {
+  font-size: 1rem;
+  letter-spacing: 0.03em;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  flex: 1;
+  margin-right: 15px;
+}
+
+.btn {
+  cursor: pointer;
+  font-weight: 600;
+  border: none;
+  border-radius: 8px;
+  padding: 8px 14px;
+  font-size: 0.9rem;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  min-width: 110px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+}
+
+.btn-connect {
+  background-color: #2563eb; /* mavi */
+  color: white;
+}
+
+.btn-connect:hover {
+  background-color: #1d4ed8;
+}
+
+.btn-disconnect {
+  background-color: transparent;
+  color: #ef4444; /* kırmızı */
+  border: 2px solid #ef4444;
+}
+
+.btn-disconnect:hover {
+  background-color: #ef4444;
+  color: white;
+}
+
+/* İkonu kaldırdım, daha sade */
+/* Cüzdan popup overlay - tam ekran koyu yarı şeffaf */
+.wallet-popup-overlay {
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background-color: rgba(0,0,0,0.85);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+/* Popup kutusu */
+.wallet-popup {
+  background-color: #222;
+  padding: 30px 40px;
+  border-radius: 15px;
+  box-shadow: 0 0 15px #0f0;
+  text-align: center;
+  color: #eee;
+}
+
+.wallet-popup h2 {
+  margin-bottom: 15px;
+  font-size: 2rem;
+  color: #4caf50;
+}
+
+.wallet-popup p {
+  margin-bottom: 25px;
+  font-size: 1.1rem;
+}
+
+/* Buton */
+.btn-connect {
+  background-color: #4caf50;
+  border: none;
+  color: white;
+  padding: 12px 28px;
+  font-weight: bold;
+  font-size: 1.1rem;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.btn-connect:hover {
+  background-color: #3a9d38;
+}
+
+/* start-screen overlay */
+.start-screen {
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background-color: rgba(0, 0, 0, 0.75);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 10;
+  color: #fff;
+  border-radius: 12px;
+}
+
+.start-screen h2 {
+  margin-bottom: 20px;
+  font-size: 2rem;
+  font-weight: 700;
+  color:#fff;
+}
+
+.start-screen button {
+  padding: 12px 28px;
+  font-size: 1.2rem;
+  font-weight: 600;
+  border: none;
+  border-radius: 10px;
+  background-color: #4caf50;
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.start-screen button:hover {
+  background-color: #3a9d38;
+}
+.top-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  margin-bottom: 10px;
+  flex-wrap: wrap;
+}
+
+.wallet-connection,
+.score-container {
+  margin: 10px 40px;
+}
+
+/* Responsive düzenleme isteğe bağlı */
+@media (max-width: 600px) {
+  .top-bar {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+/* --- Responsive Mobil Uyumu --- */
+
+@media (max-width: 768px) {
+  html, body {
+    padding: 10px;
+    align-items: flex-start;
+  }
+
+  .app-container {
+    width: 100%;
+    padding: 20px 12px;
+    border-radius: 12px;
+  }
+
+  .app-title {
+    font-size: 2.2rem;
+    letter-spacing: 2px;
+    margin-bottom: 20px;
+  }
+
+  .score-box {
+    font-size: 1.1rem;
+    padding: 10px 16px;
+  }
+
+  .game-area {
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+  }
+
+  .grid {
+    width: 100%;
+    height: auto;
+    padding: 10px;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+  }
+
+  .tile {
+    width: 60px;
+    height: 60px;
+    font-size: 1.4rem;
+    border-radius: 10px;
+  }
+
+  .leaderboard {
+    width: 100%;
+    padding: 16px;
+    font-size: 0.95rem;
+    box-shadow: none;
+  }
+
+  .leaderboard h2 {
+    font-size: 1.2rem;
+  }
+
+  .wallet-connected {
+    flex-direction: column;
+    align-items: flex-start;
+    max-width: 100%;
+    padding: 12px;
+    gap: 10px;
+  }
+
+  .wallet-address {
+    font-size: 0.95rem;
+    margin-right: 0;
+    width: 100%;
+  }
+
+  .btn {
+    width: 100%;
+    font-size: 0.9rem;
+    padding: 10px;
+    text-align: center;
+  }
+
+  .gameover-popup {
+    width: 90%;
+    padding: 1.5rem;
+    font-size: 0.95rem;
+  }
+
+  .gameover-popup h2 {
+    font-size: 1.6rem;
+  }
+
+  .gameover-popup p {
+    font-size: 1rem;
+  }
+
+  .gameover-popup button {
+    font-size: 1rem;
+    width: 100%;
+    padding: 0.6rem;
+  }
+
+  button {
+    width: 100%;
+    font-size: 1rem;
+    padding: 12px 18px;
+  }
+}
