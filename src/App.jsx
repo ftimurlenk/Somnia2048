@@ -129,8 +129,8 @@ const App = () => {
       {!wallet && (
         <div className="wallet-popup-overlay">
           <div className="wallet-popup">
-            <h2>Connect Wallet</h2>
-            <p>Please connect your wallet to start the game.</p>
+            <h2>Wallet Must Be Connected</h2>
+            <p>Please connect your wallet to continue playing.</p>
             <button className="btn btn-connect" onClick={connectWallet}>Connect</button>
           </div>
         </div>
