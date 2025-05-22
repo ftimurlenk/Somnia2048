@@ -8,7 +8,7 @@ const Leaderboard = () => {
   useEffect(() => {
     const fetchScores = async () => {
       try {
-        const res = await fetch('https://game-backend-production-a221.up.railway.app:8080/api/scores/leaderboard');
+        const res = await fetch('https://game-backend-production-a221.up.railway.app/api/scores/leaderboard');
         const data = await res.json();
         setScores(data);
 
