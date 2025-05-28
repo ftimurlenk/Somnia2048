@@ -164,6 +164,16 @@ html, body {
   color: #fff;
   font-size: 1.4rem;
 }
+.tile-4096 {
+  background: #9b2c6b; /* parlak kırmızı */
+  color: #fff;
+  font-size: 1.4rem;
+}
+.tile-8192 {
+  background: #6b1e4b; /* parlak kırmızı */
+  color: #fff;
+  font-size: 1.4rem;
+}
 
 /* --- Buttons --- */
 button {
