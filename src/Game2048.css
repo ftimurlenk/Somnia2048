@@ -119,6 +119,8 @@ body {
 .tile-512 { background: #e53e3e; }
 .tile-1024 { background: #dd6b20; }
 .tile-2048 { background: #d53f8c; }
+.tile-4096 { background: #9b2c6b; }
+.tile-8192 { background: #6b1e4b; }
 
 .tile-new {
     animation: popIn 0.3s ease-in-out;
